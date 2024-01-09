@@ -1,6 +1,6 @@
 package Book;
 
-public class playground {
+public class mainBook {
 
     public static void main(String[] args) {
         book myBook = new book("The Great Book", 100, 10);

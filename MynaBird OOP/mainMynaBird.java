@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class playground {
+public class mainMynaBird {
     static Scanner scn = new Scanner(System.in);
 
     public static void main(String[] args) {
