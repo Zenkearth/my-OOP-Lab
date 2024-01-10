@@ -2,7 +2,23 @@ package Glass;
 
 public class mainGlass {
     public static void main(String[] args) {
-        glass ThisGlass1 = new glass(200,3000);
+        glass ThisGlass1 = new glass(200,20);
+        glass ThisGlass2 = new glass(400,0);
         ThisGlass1.getComponent();
+        ThisGlass1.addSomeWater(40);
+        ThisGlass1.getComponent();
+        ThisGlass1.pourAllWater();
+        ThisGlass1.getComponent();
+        ThisGlass1.addFullWater();
+        ThisGlass1.getComponent();
+        ThisGlass1.pourSomeWater(30);
+        ThisGlass1.getComponent();
+
+        System.out.println("\n\n\n\n");
+        ThisGlass1.getComponent();
+        ThisGlass2.getComponent();
+        ThisGlass1.pourWaterToAnotherGlass(ThisGlass2,100);
+        ThisGlass1.getComponent();
+        ThisGlass2.getComponent();
     }
 }
