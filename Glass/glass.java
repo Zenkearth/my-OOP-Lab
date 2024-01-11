@@ -29,7 +29,8 @@ public class glass {
     public int getCapacity() {
         return this.capacity;
     }
-    public String getName(){
+
+    public String getName() {
         return this.glassName;
     }
 
@@ -48,6 +49,7 @@ public class glass {
             this.water += value;
         } else {
             this.water = this.capacity;
+
         }
     }
 
@@ -70,13 +72,13 @@ public class glass {
 
     // ------------------------------------------------------------------
     public void pourWaterToAnotherGlass(glass anotherGlass, int value) {
-        System.out.printf("\nPour %d water from %s glass to another glass\n", value,this.glassName);
+        System.out.printf("\nPour %d water from %s glass to another glass\n\n", value, this.glassName);
         this.pourSomeWater(value);
         anotherGlass.addSomeWater(value);
     }
 
     public void pourWaterToAnotherGlassAll(glass anothergGlass) {
-        System.out.println("\nPour all water from this glass to another glass");
+        System.out.println("\nPour all water from this glass to another glass\n");
         anothergGlass.addSomeWater(this.getWater());
         this.pourAllWater();
     }
