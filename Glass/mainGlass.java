@@ -48,7 +48,8 @@ public class mainGlass {
                 System.out.println("Test 7: Attempt to pour more water than is available in Glass1");
                 try {
                         t1.pourSomeWater(20);
-                        System.out.printf("\tUnexpected success: The %s now has %d water\n", t1.getName(),t1.getWater());
+                        System.out.printf("\tUnexpected success: The %s now has %d water\n", t1.getName(),
+                                        t1.getWater());
                 } catch (Exception e) {
                         System.out.printf("\tExpected failure: %s\n", e.getMessage());
                 }

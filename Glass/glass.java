@@ -37,7 +37,6 @@ public class glass {
     // addWater-----------------------------------------------
 
     public void addFullWater() {
-        //System.out.printf("Add Full water to the glass\n");
         this.water = this.capacity;
     }
 
@@ -55,7 +54,6 @@ public class glass {
 
     // pourWater--------------------------------------------------------
     public void pourAllWater() {
-        //System.out.printf("Pour all water to the glass\n");
         this.water = 0;
     }
 
@@ -72,13 +70,11 @@ public class glass {
 
     // ------------------------------------------------------------------
     public void pourWaterToAnotherGlass(glass anotherGlass, int value) {
-        // System.out.printf("\nPour %d water from %s glass to another glass\n\n", value, this.glassName);
         this.pourSomeWater(value);
         anotherGlass.addSomeWater(value);
     }
 
     public void pourWaterToAnotherGlassAll(glass anothergGlass) {
-        // System.out.println("\nPour all water from this glass to another glass\n");
         anothergGlass.addSomeWater(this.getWater());
         this.pourAllWater();
     }
