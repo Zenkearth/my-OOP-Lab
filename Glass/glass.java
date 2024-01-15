@@ -60,15 +60,15 @@ public class glass {
     }
 
     public void pourSomeWater(int value) {
-        if (value < 0) {
-            throw new IllegalArgumentException("Water negative !!");
+        if (value <= 0) {
+            throw new IllegalArgumentException("Negative or zero value not allowed");
         }
-        if (this.water - value >= 0) {
-            this.water -= value;
-        } else {
-            this.water = 0;
+        if (value > this.water) {
+            throw new IllegalStateException("Insufficient water available");
         }
+        this.water -= value;
     }
+    
 
     // ------------------------------------------------------------------
     public void pourWaterToAnotherGlass(glass anotherGlass, int value) {
