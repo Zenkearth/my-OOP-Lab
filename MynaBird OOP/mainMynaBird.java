@@ -47,7 +47,7 @@ public class mainMynaBird {
             baby.getProp();
             System.out.println("------------------------------------------------------------------");
 
-            // Test Case 10: have sex
+            // Test Case 11: have sex with same gender
             MynaBird boyFrieBird = new MynaBird("Tom", 4, 30, true, true);
             MynaBird birddd = littlebird.haveSex(boyFrieBird);
             if (birddd != null) {
