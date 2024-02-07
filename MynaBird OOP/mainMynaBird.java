@@ -50,12 +50,9 @@ public class mainMynaBird {
             // Test Case 10: have sex
             MynaBird boyFrieBird = new MynaBird("Tom", 4, 30, true, true);
             MynaBird birddd = littlebird.haveSex(boyFrieBird);
-            if (birddd == null) {
-                System.out.println("The baby bird never came to be.");
-            } else {
+            if (birddd != null) {
                 birddd.getProp();
             }
-
             System.out.println("------------------------------------------------------------------");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
