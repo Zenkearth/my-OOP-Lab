@@ -13,8 +13,8 @@ public class Board {
     }
 
     public void displayBoard() {
-        for (Figure figure : board) { // เปลี่ยนจาก playerFigures เป็น board
-            if (figure != null) { // เพิ่มการตรวจสอบว่าไม่เป็น null
+        for (Figure figure : board) {
+            if (figure != null) {
                 System.out.println(figure.getName() + " is at position: " + (figure.getNowPosition() + 1));
             }
         }
@@ -31,12 +31,13 @@ public class Board {
         System.out.println();
     }
 
-    public void moveFigure(int playerIndex, int movePosition) {
-        if (canMove(playerIndex, movePosition - 1)) { // ลบ 1 เพื่อแปลงจาก position ให้เป็น index
+    public void moveFigure(int playerNumber, int movePosition) {
+        int playerIndex = playerNumber - 1;
+        if (canMove(playerNumber, movePosition)) { 
             int currentPosition = playerFigures[playerIndex].getNowPosition();
-            board[currentPosition] = null; // ลบ figure จากตำแหน่งเดิม
-            playerFigures[playerIndex].setNowPosition(movePosition - 1); // ลบ 1 เพื่อแปลงจาก position ให้เป็น index
-            board[movePosition - 1] = playerFigures[playerIndex]; // เพิ่ม figure ไปยังตำแหน่งใหม่
+            board[currentPosition] = null;
+            playerFigures[playerIndex].setNowPosition(movePosition - 1);
+            board[movePosition - 1] = playerFigures[playerIndex];
         } else {
             System.out.println("Invalid move. Please try again.");
         }
@@ -44,16 +45,14 @@ public class Board {
     
 
     public boolean canMove(int playerIndex, int movePosition) {
-        movePosition--; // ปรับตำแหน่งให้เป็น index ของ array
-        // ตรวจสอบว่า index ของผู้เล่นถูกต้อง และ movePosition อยู่ในขอบเขตของบอร์ด
+        playerIndex--;
+        movePosition--;
         if (playerIndex < 0 || playerIndex >= playerFigures.length) {
-            return false; // playerIndex ไม่ถูกต้อง
+            return false;
         }
         if (movePosition < 0 || movePosition >= tableSize) {
-            return false; // movePosition ไม่อยู่ในขอบเขตของบอร์ด
+            return false;
         }
-        // ตรวจสอบว่าตำแหน่งที่ต้องการย้ายไปว่างอยู่
         return board[movePosition] == null;
     }
-
 }
